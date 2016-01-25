@@ -1,20 +1,22 @@
 #!/usr/bin/env ruby
+require_relative 'lib/mutant'
 
 class MutantsApplication
+
   def initialize
     @roster = []
   end
 
   def get_more_mutants
-    mutant = {}
+    mutant = Mutant.new
     print 'What is your real name? '
-    mutant[:real_name] = gets.chomp
+    mutant.real_name = gets.chomp
 
-    print "How about that mutant name, #{mutant[:real_name]}? "
-    mutant[:mutant_name] = gets.chomp
+    print "How about that mutant name, #{mutant.real_name}? "
+    mutant.mutant_name = gets.chomp
 
     print "What is your mutant power? "
-    mutant[:power] = gets.chomp
+    mutant.power = gets.chomp
 
     @roster << mutant
   end
@@ -22,9 +24,9 @@ class MutantsApplication
   def display_roster
     puts 'ROSTER ========================='
     @roster.each_with_index do |mutant, i|
-      puts "==== Mutant #{i} - #{mutant[:mutant_name]} ========"
-      mutant.each do |field_name, field_value|
-        puts "* #{field_name}: #{field_value}"
+      puts "==== Mutant #{i} - #{mutant.mutant_name} ========"
+      mutant.attributes.each do |attribute, value|
+        puts "* #{attribute}: #{value}"
       end
     end
   end
