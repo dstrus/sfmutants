@@ -1,21 +1,32 @@
 #!/usr/bin/env ruby
 
 class MutantsApplication
-  def get_more_mutants
-    print 'What is your real name? '
-    real_name = gets.chomp
+  def initialize
+    @roster = []
+  end
 
-    print "How about that mutant name, #{real_name}? "
-    mutant_name = gets.chomp
+  def get_more_mutants
+    mutant = {}
+    print 'What is your real name? '
+    mutant[:real_name] = gets.chomp
+
+    print "How about that mutant name, #{mutant[:real_name]}? "
+    mutant[:mutant_name] = gets.chomp
 
     print "What is your mutant power? "
-    mutant_power = gets.chomp
+    mutant[:power] = gets.chomp
 
-    puts "Hi there, #{real_name}. Your mutant name is #{mutant_name}, with the power of #{mutant_power}."
+    @roster << mutant
   end
 
   def display_roster
-    # Print all of the mutant names.
+    puts 'ROSTER ========================='
+    @roster.each_with_index do |mutant, i|
+      puts "==== Mutant #{i} - #{mutant[:mutant_name]} ========"
+      mutant.each do |field_name, field_value|
+        puts "* #{field_name}: #{field_value}"
+      end
+    end
   end
 end
 
@@ -24,3 +35,5 @@ app = MutantsApplication.new
 3.times do
   app.get_more_mutants
 end
+
+app.display_roster
