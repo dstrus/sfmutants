@@ -13,7 +13,14 @@ class MutantsApplication
 
     puts "Hi there, #{real_name}. Your mutant name is #{mutant_name}, with the power of #{mutant_power}."
   end
+
+  def display_roster
+    # Print all of the mutant names.
+  end
 end
 
 app = MutantsApplication.new
-app.get_more_mutants
+
+3.times do
+  app.get_more_mutants
+end
