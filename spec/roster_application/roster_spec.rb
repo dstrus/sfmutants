@@ -1,9 +1,10 @@
 require 'spec_helper'
+include Mutantcorp::Mutant
 
 describe RosterApplication do
   before do
     @roster = RosterApplication.new
-    @test_mutant = Mutantcorp::Mutant::Mutant.new({
+    @test_mutant = Mutant.new({
       real_name:   'Amanda',
       mutant_name: 'Storm',
       power:       'fire'
