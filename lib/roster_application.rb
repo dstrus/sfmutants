@@ -1,6 +1,8 @@
 require 'bundler/setup'
 Bundler.require
 
+Strus.smoosh_the_world
+
 class RosterApplication
   include Mutantcorp::Mutant
 
