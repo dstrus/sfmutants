@@ -1,0 +1,17 @@
+PATH
+  remote: /Users/dstrus/code/salesforce/live/mutantcorp-mutant
+  specs:
+    mutantcorp-mutant (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mutantcorp-mutant!
+
+BUNDLED WITH
+   1.11.2

@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require_relative 'lib/mutant'
+require 'bundler/setup'
+Bundler.require
 
 class RosterApplication
 
@@ -8,7 +9,7 @@ class RosterApplication
   end
 
   def get_more_mutants
-    mutant = Mutant.new
+    mutant = Mutantcorp::Mutant::Mutant.new
     print 'What is your real name? '
     mutant.real_name = gets.chomp
 
