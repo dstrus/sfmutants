@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require_relative 'lib/mutant'
 
-class MutantsApplication
+class RosterApplication
 
   def initialize
     @roster = []
@@ -30,12 +30,18 @@ class MutantsApplication
       end
     end
   end
+
+  def random_fight
+    # pick two random mutants
+    # make them use their powers against each other
+  end
 end
 
-app = MutantsApplication.new
+app = RosterApplication.new
 
 3.times do
   app.get_more_mutants
 end
 
 app.display_roster
+app.random_fight
