@@ -3,13 +3,14 @@ require 'bundler/setup'
 Bundler.require
 
 class RosterApplication
+  include Mutantcorp::Mutant
 
   def initialize
     @roster = []
   end
 
   def get_more_mutants
-    mutant = Mutantcorp::Mutant::Mutant.new
+    mutant = Mutant.new
     print 'What is your real name? '
     mutant.real_name = gets.chomp
 
