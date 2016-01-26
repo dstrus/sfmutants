@@ -7,5 +7,5 @@ app = RosterApplication.new
   app.get_more_mutants
 end
 
-app.display_roster
+puts app.render_roster
 app.random_fight

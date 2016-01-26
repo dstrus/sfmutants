@@ -8,6 +8,10 @@ class RosterApplication
     @roster = []
   end
 
+  def add_mutant(mutant)
+    @roster << mutant
+  end
+
   def get_more_mutants
     mutant = Mutant.new
     print 'What is your real name? '
@@ -19,17 +23,18 @@ class RosterApplication
     print "What is your mutant power? "
     mutant.power = gets.chomp
 
-    @roster << mutant
+    add_mutant mutant
   end
 
-  def display_roster
-    puts 'ROSTER ========================='
+  def render_roster
+    rendered_roster = "ROSTER =========================\n"
     @roster.each_with_index do |mutant, i|
-      puts "==== Mutant #{i} - #{mutant.mutant_name} ========"
+      rendered_roster << "==== Mutant #{i} - #{mutant.mutant_name} ========\n"
       mutant.attributes.each do |attribute, value|
-        puts "* #{attribute}: #{value}"
+        rendered_roster << "* #{attribute}: #{value}\n"
       end
     end
+    rendered_roster
   end
 
   def random_fight
