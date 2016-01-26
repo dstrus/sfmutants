@@ -15,4 +15,9 @@ describe RosterApplication do
     @roster.add_mutant @test_mutant
     @roster.render_roster.must_match 'real_name: Amanda'
   end
+
+  it 'smooshes the roster' do
+    @roster.add_mutant @test_mutant
+    @roster.smoosh_roster.must_equal 'real_nameAmandamutant_nameStormpowerfire'
+  end
 end

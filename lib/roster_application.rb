@@ -37,6 +37,10 @@ class RosterApplication
     rendered_roster
   end
 
+  def smoosh_roster
+    @roster.map { |mutant| mutant.attributes.smoosh }.smoosh
+  end
+
   def random_fight
     # pick two random mutants
     # make them use their powers against each other

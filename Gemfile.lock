@@ -3,6 +3,11 @@ PATH
   specs:
     mutantcorp-mutant (0.1.0)
 
+PATH
+  remote: /Users/dstrus/code/salesforce/live/strus-smoosh
+  specs:
+    strus-smoosh (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,6 +29,7 @@ DEPENDENCIES
   mutantcorp-mutant!
   pry
   rake
+  strus-smoosh!
 
 BUNDLED WITH
    1.11.2
